@@ -9,5 +9,3 @@ Welcome to the official **ObsidianOS** documentation page!
 You may want to see:
 * [The Installation Guide](/docs/install)
 * [FAQs](/docs/faqs)
-
-Please remember the project is *currently* a work-in-progress!
