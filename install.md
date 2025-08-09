@@ -16,7 +16,7 @@ Please note that if you are not on the archiso then the prebuilt option will **n
 Modify the following example to suit your preferences:
 ```
 # --- System creation ---
-BUILD_DIR="obsidian_rootfs" # SquashFS generation directory
+BUILD_DIR="/tmp/obsidian_rootfs" # SquashFS generation directory
 PACKAGES="base linux linux-firmware networkmanager sudo vim nano efibootmgr python squashfs-tools arch-install-scripts base-devel" # Packages to install
 OUTPUT_SFS="system.sfs" # Output SquashFS
 TIMEZONE="America/New_York" # Olson Timezone
@@ -32,7 +32,7 @@ ADMIN_DOTFILES_TYPE="" # Type of dotfile repo.
 # CONFIG - the inside of the repo has data for your config directory (ex: gtk, fish, kitty, hypr) (requires git to be in PACKAGES)
 # * - ignore dotfiles repo and copy dotfiles from that user's home.
 ```
-Save the file as `my.mkobsfs`
+Save the file as `my.mkobsfs`.
 Then run the following command as root:
 ```
 mkobsidiansfs my.mkobsfs
@@ -47,7 +47,5 @@ Then run the following command as root:
 ```
 obsidianctl install /dev/sdX system.sfs
 ```
-***THIS WILL ERASE THE DRIVE.***
-
-Please replace `/dev/sdX` and `system.sfs` with the correct drive and image.
+***THIS WILL ERASE THE DRIVE.*** Please replace `/dev/sdX` and `system.sfs` with the correct drive and image.
 After this you will have a fully functional ObsidianOS install. Reboot and you will be able to use your newly installed system.
