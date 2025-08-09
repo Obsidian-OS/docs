@@ -4,8 +4,10 @@ layout: home
 nav_order: 1
 ---
 
-Welcome to the ObsidianOS docs!
+Welcome to the official **ObsidianOS** documentation page!
 
 You may want to see:
-* [the installation guide](/docs/install)
+* [The Installation Guide](/docs/install)
 * [FAQs](/docs/faqs)
+
+Please remember the project is *currently* a work-in-progress!
