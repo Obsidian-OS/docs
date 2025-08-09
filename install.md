@@ -16,12 +16,12 @@ As the archiso is located in a ramdisk, you must build in a partition. Firstly, 
 ```
 lsblk
 ```
-Run this command as root with sudo to turn it into an ext4 partition that we will only use for building:
+Run this command to turn it into an ext4 partition that we will only use for building:
 ```
 mkfs.ext4 /dev/sdX
 ```
 ***THIS WILL ERASE THE DRIVE.*** Please choose a disk and not an partition.
-Then, mount the drive that will be used for creating the image using sudo:
+Then, mount the drive that will be used for creating the image:
 ```
 mount /dev/sdX /mnt
 ```
@@ -48,7 +48,7 @@ ADMIN_DOTFILES_TYPE="" # Type of dotfile repo.
 # * - ignore dotfiles repo and copy dotfiles from that user's home.
 ```
 Save the file as `my.mkobsfs`.
-Then run the following command as root:
+Then run the following command:
 ```
 mkobsidiansfs my.mkobsfs
 ```
@@ -58,7 +58,7 @@ Locate your drive:
 lsblk
 ```
 Please pick a drive and not a partition. If you made your own image on the archiso, use the same drive as you formatted in the first step.
-Then run the following command as root:
+Then run the following command:
 ```
 obsidianctl install /dev/sdX /etc/system.sfs
 ```
