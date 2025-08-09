@@ -1,7 +1,7 @@
 title: ObsidianOS Docs
 description: Documentation for ObsidianOS
 theme: just-the-docs
-base_url: "/docs"
+baseurl: "/docs"
 url: https://obsidian-os.github.io
 
 defaults:
