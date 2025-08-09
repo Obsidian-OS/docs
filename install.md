@@ -1,5 +1,6 @@
 ---
 title: Installation guide
+nav_order: 2
 ---
 
 # ObsidianOS Installation Guide
