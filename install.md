@@ -8,6 +8,16 @@ nav_order: 2
 You may either:
 1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/). or,
 2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system, build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
+## Get an archiso (optional)
+The archiso currently must be built manually.
+Run this script to generate an archiso.
+```
+git clone https://github.com/Obsidian-OS/archiso/
+cd archiso
+git submodule update --init --recursive
+sudo make -B
+```
+Your archiso will be in the `out` folder.
 ## Start install
 ### Formatting the target drive (archiso only, optional)
 This is only optional if you are not creating your own image.
