@@ -8,17 +8,32 @@ nav_order: 2
 You may either:
 1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/). or,
 2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system, build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
-## Guided installer
-This installer is available on the customized archiso and helps install ObsidianOS. It is possible to use this on an normal system by [installing it on an arch host](https://github.com/Obsidian-OS/guidedobsidian). To use it, just type in `guidedobsidian`.
-Please note that if you are not on the archiso then the prebuilt option will **not work**.
-## Manual install
-### Creating a system image
+## Start install
+### Formatting the target drive (archiso only, optional)
+This is only optional if you are not creating your own image.
+
+As the archiso is located in a ramdisk, you must build in a partition. Firstly, locate your target disk:
+```
+lsblk
+```
+Run this command as root with sudo to turn it into an ext4 partition that we will only use for building:
+```
+mkfs.ext4 /dev/sdX
+```
+***THIS WILL ERASE THE DRIVE.*** Please choose a disk and not an partition.
+Then, mount the drive that will be used for creating the image using sudo:
+```
+mount /dev/sdX /mnt
+```
+Please switch out `/dev/sdX` with the correct drive.
+### Creating a system image (optional)
+This step is only optional if you are using the archiso.
 Modify the following example to suit your preferences:
 ```
 # --- System creation ---
-BUILD_DIR="/tmp/obsidian_rootfs" # SquashFS generation directory
+BUILD_DIR="/mnt/obsidian_rootfs" # SquashFS generation directory
 PACKAGES="base linux linux-firmware networkmanager sudo vim nano efibootmgr python squashfs-tools arch-install-scripts base-devel" # Packages to install
-OUTPUT_SFS="system.sfs" # Output SquashFS
+OUTPUT_SFS="/etc/system.sfs" # Output SquashFS. Please place this somewhere else if you are not on the archiso.
 TIMEZONE="America/New_York" # Olson Timezone
 HOSTNAME="obsidian" # Hostname
 CUSTOM_SCRIPTS_DIR="" # Path to a directory containing custom shell scripts, including a main.sh script.
@@ -42,10 +57,10 @@ Locate your drive:
 ```
 lsblk
 ```
-Please pick a drive and not a partition.
+Please pick a drive and not a partition. If you made your own image on the archiso, use the same drive as you formatted in the first step.
 Then run the following command as root:
 ```
-obsidianctl install /dev/sdX system.sfs
+obsidianctl install /dev/sdX /etc/system.sfs
 ```
-***THIS WILL ERASE THE DRIVE.*** Please replace `/dev/sdX` and `system.sfs` with the correct drive and image.
+***THIS WILL ERASE THE DRIVE.*** Please replace `/dev/sdX` with the correct drive and replace `/etc/system.sfs` with the correct location.
 After this you will have a fully functional ObsidianOS install. Reboot and you will be able to use your newly installed system.
