@@ -1,17 +1,18 @@
 ---
 title: Installation guide
+nav_order: 2
 ---
 
 # ObsidianOS Installation Guide
 ## Getting ready
 You may either:
-1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/).
-2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system and build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
+1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/). or,
+2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system, build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 ## Guided installer
 This installer is available on the customized archiso and helps install ObsidianOS. It is possible to use this on an normal system by [installing it on an arch host](https://github.com/Obsidian-OS/guidedobsidian). To use it, just type in `guidedobsidian`.
-Please note that if you are not on the archiso then the prebuilt option will not work.
+Please note that if you are not on the archiso then the prebuilt option will **not work**.
 ## Manual install
-### Create an image
+### Creating a system image
 Modify the following example to suit your preferences:
 ```
 # --- System creation ---
@@ -36,7 +37,7 @@ Then run the following command as root:
 ```
 mkobsidiansfs my.mkobsfs
 ```
-### Flash the image
+### Flash the system image
 Locate your drive:
 ```
 lsblk
@@ -48,5 +49,5 @@ obsidianctl install /dev/sdX system.sfs
 ```
 ***THIS WILL ERASE THE DRIVE.***
 
-Please replace /dev/sdX and system.sfs with the correct drive and image.
-After this you will have a fully installed ObsidianOS install. Reboot and you will be able to use your newly installed system.
+Please replace `/dev/sdX` and `system.sfs` with the correct drive and image.
+After this you will have a fully functional ObsidianOS install. Reboot and you will be able to use your newly installed system.
