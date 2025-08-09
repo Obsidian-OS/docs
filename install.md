@@ -9,7 +9,7 @@ You may either:
 1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/). or,
 2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system, build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 ## Get an archiso (optional)
-The archiso currently must be built manually.
+Prebuilt archisos are available on the [download page.](https://obsidian-os.github.io/download.html)
 Run this script to generate an archiso.
 ```
 git clone https://github.com/Obsidian-OS/archiso/
