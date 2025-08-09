@@ -4,5 +4,11 @@ theme: just-the-docs
 base_url: "/docs"
 url: https://obsidian-os.github.io
 
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 aux_links:
   Home: https://obsidian-os.github.io/
