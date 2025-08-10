@@ -3,30 +3,44 @@ title: System Requirements
 nav_order: 3
 ---
 
-## Minimum system requirements
+# System Requirements
 
-The following are the minimum requirements to install and run ObsidianOS:
+## Minimum Requirements
 
-- **Architecture:** x86_64-compatible processor  
-- **Memory:** 512 MiB RAM  
-  - 16 GiB required to build an image with `archiso`  
-  - 32 GiB recommended for building  
-- **Storage:** 25 GiB total, allocated as:  
-  - `/` root: 5 GiB × 2  
-  - `/etc`: 5 GiB  
-  - `/var`: 5 GiB  
-  - EFI System Partition (ESP): 512 MiB × 2  
-- **Firmware:** EFI-based motherboard (UEFI)
+The following are the **minimum supported specifications** to install and run ObsidianOS:
 
-> **Note:** An active internet connection is required during building the system image.
+- **Architecture:**  
+  - x86_64-compatible CPU (64‑bit)  
+  - **Note:** ARM, RISC-V, and 32‑bit CPUs are not supported.
+- **Memory (RAM):**  
+  - **Runtime:** 512 MiB minimum to boot and operate  
+  - **Image building with `archiso`:** at least 16 GiB  
+  - **Recommended when building:** 32 GiB for faster builds and to avoid swapping
+- **Storage:** ~25 GiB total, allocated as:  
+  - `/` root: 5 GiB × 2 *(for A/B partition layout)*  
+  - `/etc`: 5 GiB  
+  - `/var`: 5 GiB  
+  - EFI System Partition (ESP): 512 MiB × 2 *(for A/B ESP layout)*
+- **Firmware:**  
+  - UEFI (EFI‑based motherboard/firmware) required  
+  - Legacy BIOS/CSM mode is **not supported**
+- **Connectivity:**  
+  - Active internet connection required during system image building
 
 ---
 
-## Recommended system requirements
+## Recommended Requirements
 
-For a smoother experience, the following specifications are recommended:
+For a smoother installation and better day‑to‑day performance:
 
-- **Architecture:** x86_64-compatible processor with multiple cores
-- **Memory:** 2 GiB RAM or more for general use (more needed during building of image, you can just use the default one provided in the archiso)
-- **Storage:** 40 GiB or more for additional packages, logs, and user data
-- **Firmware:** EFI-based motherboard (UEFI) with Secure Boot disabled
+- **Architecture:**  
+  - Modern multi‑core x86_64 CPU
+- **Memory (RAM):**  
+  - 2 GiB or more for general use  
+  - Higher amounts significantly improve build speeds  
+  - *(If using the prebuilt image from the ArchISO and the included /etc/system.sfs, build RAM requirements can be ignored)*
+- **Storage:**  
+  - 40 GiB or more to allow space for additional packages, logs, and user data
+- **Firmware:**  
+  - UEFI with Secure Boot disabled  
+    - *Secure Boot may be supported in the future, but is currently untested/unsupported*
