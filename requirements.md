@@ -1,6 +1,6 @@
 ---
 title: System Requirements
-nav_order: 2
+nav_order: 3
 ---
 
 ## Minimum system requirements
@@ -18,7 +18,7 @@ The following are the minimum requirements to install and run ObsidianOS:
   - EFI System Partition (ESP): 512 MiB × 2  
 - **Firmware:** EFI-based motherboard (UEFI)
 
-> **Note:** An active internet connection is required during installation.
+> **Note:** An active internet connection is required during building the system image.
 
 ---
 
