@@ -4,74 +4,90 @@ nav_order: 2
 ---
 
 # ObsidianOS Installation Guide
-## Getting ready
-You may either:
-1. Boot off the [customized archiso](https://github.com/Obsidian-OS/archiso/). or,
-2. Install the [arch-install-scripts](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on an arch system, build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
-## Get an archiso (optional)
-Prebuilt archisos are available on the [download page.](https://obsidian-os.github.io/download.html)
-Run this script to generate an archiso.
-```
-git clone https://github.com/Obsidian-OS/archiso/
-cd archiso
-git submodule update --init --recursive
-sudo make -B
-```
-Your archiso will be in the `out` folder.
-## Start install
-### Formatting the target drive (archiso only, optional)
-This is only optional if you are not creating your own image.
 
-As the archiso is located in a ramdisk, you must build in a partition. Firstly, locate your target disk:
-```
-lsblk
-```
-Run this command to turn it into an ext4 partition that we will only use for building:
-```
-mkfs.ext4 /dev/sdX
-```
-***THIS WILL ERASE THE DRIVE.*** Please choose a disk and not an partition.
-Then, mount the drive that will be used for creating the image:
-```
-mount /dev/sdX /mnt
-```
-Please switch out `/dev/sdX` with the correct drive.
-### Creating a system image (optional)
-This step is only optional if you are using the archiso.
-Modify the following example to suit your preferences:
-```
-# --- System creation ---
-BUILD_DIR="/mnt/obsidian_rootfs" # SquashFS generation directory
-PACKAGES="base linux linux-firmware networkmanager sudo vim nano efibootmgr python squashfs-tools arch-install-scripts base-devel" # Packages to install
-OUTPUT_SFS="/etc/system.sfs" # Output SquashFS. Please place this somewhere else if you are not on the archiso.
-TIMEZONE="America/New_York" # Olson Timezone
-HOSTNAME="obsidian" # Hostname
-ROOT_HAVEPASSWORD="" # Set this to anything other than blank to remove the password from the root user.
-CUSTOM_SCRIPTS_DIR="" # Path to a directory containing custom shell scripts, including a main.sh script.
-# If provided, these scripts will be copied into the chroot environment, made executable, and main.sh will be executed within the chroot.
-# This allows for custom configurations or installations to be performed inside the SquashFS image.
-# --- User Creation ---
-ADMIN_USER="neoapps" # Creates an user with the wheel group and adds the wheel group to the sudoers file.
-ADMIN_DOTFILES="" # A git repo with dotfiles that will copy to your home directory
-ADMIN_DOTFILES_TYPE="" # Type of dotfile repo.
-# HOME - the inside of the repo has data for your home directory (ex: .zshrc, .config, .bashrc) (requires git to be in PACKAGES)
-# CONFIG - the inside of the repo has data for your config directory (ex: gtk, fish, kitty, hypr) (requires git to be in PACKAGES)
-# * - ignore dotfiles repo and copy dotfiles from that user's home.
-```
-Save the file as `my.mkobsfs`.
-Then run the following command:
-```
-mkobsidiansfs my.mkobsfs
-```
-### Flash the system image
-Locate your drive:
-```
-lsblk
-```
-Please pick a drive and not a partition. If you made your own image on the archiso, use the same drive as you formatted in the first step.
-Then run the following command:
-```
-obsidianctl install /dev/sdX /etc/system.sfs
-```
-***THIS WILL ERASE THE DRIVE.*** Please replace `/dev/sdX` with the correct drive and replace `/etc/system.sfs` with the correct location.
-After this you will have a fully functional ObsidianOS install. Reboot and you will be able to use your newly installed system.
+## Before You Begin
+
+Check the [System Requirements](https://obsidian-os.github.io/docs/requirements.html).
+
+***
+
+## Step 1: Choose Your Installation Method
+
+You have two options:
+
+### **Option 1: Recommended — Use the Customized ArchISO**
+
+- Download a pre-built ArchISO from the [ObsidianOS Download Page](https://obsidian-os.github.io/download.html), or build your own with:
+  ```bash
+  git clone https://github.com/Obsidian-OS/archiso/
+  cd archiso
+  git submodule update --init --recursive
+  sudo make -B
+  ```
+  - The created ISO is in the `out` directory.
+- **The customized ArchISO provides both `obsidianctl` and `mkobsidiansfs` tools out of the box.**
+- This is the recommended and easiest way to install ObsidianOS.
+
+### **Option 2: Use an Existing Arch Linux Host**
+
+- Install the [`arch-install-scripts`](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on your Arch system.
+- Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
+- Proceed with OS image creation and installation using those tools.
+
+***
+
+## Step 2: Prepare the Target Drive
+
+***Warning:** This will erase the target drive.*
+
+1. Identify your target disk:
+   ```bash
+   lsblk
+   ```
+2. Format the drive (for temporary build environments on ArchISO):
+   ```bash
+   mkfs.ext4 /dev/sdX
+   ```
+   - Replace `/dev/sdX` with your target disk (not a partition!).
+3. Mount the formatted drive:
+   ```bash
+   mount /dev/sdX /mnt
+   ```
+
+***
+
+## Step 3: Create a System Image
+
+1. Configure `my.mkobsfs` for your needs:
+   - Example config includes build directory, package list, user settings, and optional dotfiles arrangement.
+2. Build the SquashFS image:
+   ```bash
+   mkobsidiansfs my.mkobsfs
+   ```
+
+***
+
+## Step 4: Install the OS Image
+
+1. Check available drives:
+   ```bash
+   lsblk
+   ```
+2. Install the image:
+   ```bash
+   obsidianctl install /dev/sdX /etc/system.sfs
+   ```
+   - Replace `/dev/sdX` with the target drive and adjust `/etc/system.sfs` as needed. also inputting a `.mkobsfs` file instead of the SquashFS image is supported.
+
+***
+
+## Step 5: Reboot
+
+- When finished, reboot your system. You now have a functional ObsidianOS installation.
+
+***
+
+### **More info**
+
+- The **customized ArchISO** is the preferred and most out-of-the-box method, as it includes all essential tools.
+- For advanced users, building from a regular Arch host remains fully supported.
