@@ -11,6 +11,6 @@ This documentation will guide you through installation, usage, and troubleshooti
 
 **Get started:**
 - [Installation Guide](/docs/install) — Step‑by‑step instructions for installing ObsidianOS
-- [FAQs](/docs/faqs) — Answers to common questions and issues (no questions yet XD)
+- [FAQs](/docs/faqs) — Answers to common questions and issues.
 
 > **Tip:** If this is your first time using ObsidianOS, start with the [Installation Guide](/docs/install) and review the [System Requirements](/docs/requirements) before you begin.
