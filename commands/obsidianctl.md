@@ -1,6 +1,7 @@
 ---
 title: obsidianctl
 nav_order: 4.1
+parent: Commands
 ---
 # `obsidianctl`
 `obsidianctl` is a command-line utility designed to manage A/B boot slots and shared partitions on ObsidianOS systems. It provides functionalities for system installation, status monitoring, active slot switching, and updating system images.
