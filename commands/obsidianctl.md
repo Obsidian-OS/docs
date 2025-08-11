@@ -9,7 +9,7 @@ parent: Commands
 You can run the `obsidianctl` script directly. Remember to run it with `sudo` as all commands other than `obsidianctl status` require root privileges.
 
 ```bash
-sudo ./obsidianctl [command] [options]
+sudo obsidianctl [command] [options]
 ```
 
 ## Commands
@@ -19,7 +19,7 @@ sudo ./obsidianctl [command] [options]
 Displays the currently active A/B slot and various system details. This command does not require root.
 
 ```bash
-./obsidianctl status
+obsidianctl status
 ```
 
 ### `install <device> <system_sfs>`
@@ -30,7 +30,7 @@ Partitions the specified device and installs the SquashFS system image. **WARNIN
 *   `<system_sfs>`: Path to the SquashFS system image file (e.g., `/path/to/obsidianos.sfs`). Defaults to `/etc/system.sfs`
 
 ```bash
-sudo ./obsidianctl install /dev/sda /path/to/your_system.sfs
+sudo obsidianctl install /dev/sda /path/to/your_system.sfs
 ```
 
 ### `switch <slot>`
@@ -40,7 +40,7 @@ Switches the active boot slot to either 'a' or 'b'. This change is persistent ac
 *   `<slot>`: The slot to make active (`a` or `b`).
 
 ```bash
-sudo ./obsidianctl switch a
+sudo obsidianctl switch a
 ```
 
 ### `update <slot> <system_sfs>`
@@ -51,7 +51,7 @@ Updates a specific A/B slot with a new SquashFS system image. **WARNING: This wi
 *   `<system_sfs>`: Path to the new SquashFS system image file.
 
 ```bash
-sudo ./obsidianctl update b /path/to/new_system_image.sfs
+sudo obsidianctl update b /path/to/new_system_image.sfs
 ```
 
 ### `sync <slot>`
@@ -61,5 +61,5 @@ Clones the currently running slot to the specified slot. This is a block-level c
 *   `<slot>`: The slot to sync to (`a` or `b`).
 
 ```bash
-sudo ./obsidianctl sync b
+sudo obsidianctl sync b
 ```
