@@ -38,11 +38,7 @@ You have two options:
 ### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `install.sh`
 - Just run:
 ```
-curl -fsSL https://ba.sh/ARbs | sudo bash
-```
-- If you do not trust a short url, you may use the following command:
-```
-curl -fsSL https://raw.githubusercontent.com/Obsidian-OS/Obsidian-OS.github.io/refs/heads/main/install.sh | sudo bash
+sudo bash -c "$(curl -fsSL https://ba.sh/ARbs)"
 ```
 
 ## Step 2: Prepare the Target Drive
