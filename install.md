@@ -27,6 +27,7 @@ You have two options:
   - The created ISO is in the `out` directory.
 - **The customized ArchISO provides both `obsidianctl` and `mkobsidiansfs` tools out of the box.**
 - This is the recommended and easiest way to install ObsidianOS.
+- On startup, an installation wizard is available. You may use this instead of following the instructions.
 
 ### **Option 2: Use an Existing Arch Linux Host**
 
@@ -34,7 +35,15 @@ You have two options:
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-***
+### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `install.sh`
+- Just run:
+```
+sudo bash <(curl -fsSL https://ba.sh/ARbs)
+```
+- If you do not trust a short url, you may use the following command:
+```
+sudo bash <(curl -fsSL https://raw.githubusercontent.com/Obsidian-OS/Obsidian-OS.github.io/refs/heads/main/install.sh)
+```
 
 ## Step 2: Prepare the Target Drive
 
