@@ -35,12 +35,13 @@ You have two options:
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `install.sh`
+### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
 sudo bash -c "$(curl -fsSL https://ba.sh/ARbs)"
 ```
 
+(the name is a backronym from the short url)
 ## Step 2: Prepare the Target Drive
 
 ***Warning:** This will erase the target drive.*
