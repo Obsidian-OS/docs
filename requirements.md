@@ -19,7 +19,8 @@ The following are the **minimum supported specifications** to install and run Ob
 - **Storage:** ~25 GiB total, allocated as:  
   - `/` root: 5 GiB × 2 *(for A/B partition layout)*  
   - `/etc`: 5 GiB  
-  - `/var`: 5 GiB  
+  - `/var`: 5 GiB
+  - `/home`: Rest of available space
   - EFI System Partition (ESP): 512 MiB × 2 *(for A/B ESP layout)*
 - **Firmware:**  
   - UEFI (EFI‑based motherboard/firmware) required  
