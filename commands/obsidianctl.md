@@ -105,3 +105,45 @@ Chroots into the specified slot, mounting all essential mountpoints, ensuring be
 ```bash
 sudo obsidianctl enter-slot b --enable-networking
 ```
+
+### `backup-slot <slot> [--backup-dir]`
+
+Creates a compressed backup of a specific slot with metadata. The backup includes kernel version, package count, and timestamp information.
+
+*    `<slot>`: The slot to backup (`a` or `b`).
+*    `--backup-dir`: Directory to store backups (default: `/var/backups/obsidianctl/slot_X`).
+
+```bash
+sudo obsidianctl backup-slot a
+sudo obsidianctl backup-slot b --backup-dir /mnt/external/backups
+```
+
+### `rollback-slot <slot> <backup_path>`
+
+Restores a slot from a previous backup. This will completely overwrite the target slot with the backup data.
+
+*    `<slot>`: The slot to restore (`a` or `b`).
+*    `<backup_path>`: Path to the backup file (`.tar.gz`).
+
+```bash
+sudo obsidianctl rollback-slot a /var/backups/obsidianctl/slot_a/slot_a_backup_20241201_143022.tar.gz
+```
+
+### `health-check`
+
+Performs a comprehensive health assessment of both A/B slots. This command checks filesystem integrity, bootability, kernel status, and package information for each slot.
+
+```bash
+sudo obsidianctl health-check
+```
+
+### `verify-integrity <slot>`
+
+Verifies the integrity of a specific slot by running filesystem checks and testing critical system files for corruption.
+
+*    `<slot>`: The slot to verify (`a` or `b`).
+
+```bash
+sudo obsidianctl verify-integrity a
+sudo obsidianctl verify-integrity b
+```
