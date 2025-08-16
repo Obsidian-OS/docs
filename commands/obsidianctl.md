@@ -43,6 +43,16 @@ Switches the active boot slot to either 'a' or 'b'. This change is persistent ac
 sudo obsidianctl switch a
 ```
 
+### `switch-once <slot>`
+
+Switches the active boot slot to either 'a' or 'b'. This change is not persistent.
+
+*   `<slot>`: The slot to make active temporarily (`a` or `b`).
+
+```bash
+sudo obsidianctl switch-once a
+```
+
 ### `update <slot> <system_sfs>`
 
 Updates a specific A/B slot with a new SquashFS system image. **WARNING: This will erase all data on the specified slot.**
