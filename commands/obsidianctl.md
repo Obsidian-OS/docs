@@ -63,3 +63,35 @@ Clones the currently running slot to the specified slot. This is a block-level c
 ```bash
 sudo obsidianctl sync b
 ```
+
+### `slot-diff`
+
+Shows a tiny diff between the currently running slot and the inactive slot.
+
+```bash
+sudo obsidianctl slot-diff
+```
+
+### `netupdate <slot>`
+
+Updates the specified slot over the internet, downloads the latest official system image. **WARNING: THIS REQUIRES YOU TO BE USING THE OFFICIAL SYSTEM IMAGE**
+
+*    `<slot>`: The slot to netupdate (`a` or `b).
+
+```bash
+sudo obsidianctl netupdate b
+```
+
+### `enter-slot <slot> --enable-networking --mount-essentials --mount-home --mount-root`
+
+Chroots into the specified slot, mounting all essential mountpoints, ensuring best experience.
+
+*    `<slot>`: The slot to chroot into.
+*    `--enable-networking`: Enable networking in the chroot.
+*    `--mount-essentials`: Mount /proc, /sys, and /dev.
+*    `--mount-home`: Bind mount /home into the chroot.
+*    `--mount-root`: Bind mount /root into the chroot.
+
+```bash
+sudo obsidianctl enter-slot b --enable-networking
+```
