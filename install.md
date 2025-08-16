@@ -38,7 +38,7 @@ You have two options:
 ### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
-sudo bash -c "$(curl -fsSL https://ba.sh/ARbs)"
+sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
 ```
 
 (the name is a backronym from the short url)
