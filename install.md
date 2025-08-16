@@ -13,9 +13,21 @@ Check the [System Requirements](https://obsidian-os.github.io/docs/requirements.
 
 ## Step 1: Choose Your Installation Method
 
-You have two options:
+You have four options:
 
-### **Option 1: Recommended — Use the Customized ArchISO**
+> **💡 Quick Start**: For most users, simply download the ObsidianOS ArchISO, boot from it, and follow the ARbs wizard that appears automatically!
+
+### **Option 1: Recommended — Use ARbs inside ObsidianOS ArchISO**
+
+- **The easiest way to install ObsidianOS!** Download and boot from the ObsidianOS ArchISO
+- On startup, the ARbs installation wizard automatically launches
+- **No need to remember complex commands or configuration syntax**
+- **Automatically handles disk detection, image selection, and dual-boot setup**
+- **Beautiful, interactive interface guides you through the entire process**
+- **This is the most user-friendly and recommended installation method.**
+- **Perfect for beginners and experienced users alike**
+
+### **Option 2: Use the Customized ArchISO**
 
 - Download a pre-built ArchISO from the [ObsidianOS Download Page](https://obsidian-os.github.io/download.html), or build your own with:
   ```bash
@@ -26,25 +38,39 @@ You have two options:
   ```
   - The created ISO is in the `out` directory.
 - **The customized ArchISO provides both `obsidianctl` and `mkobsidiansfs` tools out of the box.**
-- This is the recommended and easiest way to install ObsidianOS.
-- On startup, an installation wizard is available. You may use this instead of following the instructions.
+- On startup, the ARbs installation wizard is available for easy installation.
+- Great for offline installations or when you need a complete bootable environment.
 
-### **Option 2: Use an Existing Arch Linux Host**
+### **Option 3: Use an Existing Arch Linux Host**
 
 - Install the [`arch-install-scripts`](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on your Arch system.
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
+### **Option 4: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
 sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
 ```
 
 (the name is a backronym from the short url)
-## Step 2: Prepare the Target Drive
+## Step 2: What Happens When You Boot the ArchISO
 
-***Warning:** This will erase the target drive.*
+When you boot from the ObsidianOS ArchISO:
+
+1. **ARbs Wizard Launches**: The installation wizard starts automatically
+2. **Choose Installation Type**: Select "Install ObsidianOS" from the main menu
+3. **Dual-Boot Setup**: Choose whether to enable dual-boot alongside your existing OS
+4. **Disk Selection**: The wizard shows all available storage devices with sizes and models
+5. **System Image**: Choose from default, pre-configured, or custom images
+6. **Final Confirmation**: Review all settings before proceeding
+7. **Automatic Installation**: ARbs handles the entire installation process
+
+**That's it!** No need to remember commands or manually configure anything.
+
+## Step 3: Prepare the Target Drive (Manual Method Only)
+
+***Warning:** This section is only needed if you're not using the ARbs wizard. The wizard handles this automatically.*
 
 1. Identify your target disk:
    ```bash
@@ -62,7 +88,7 @@ sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
 
 ***
 
-## Step 3: Create a System Image
+## Step 4: Create a System Image (Manual Method Only)
 
 1. Configure `my.mkobsfs` for your needs:
    - Example config includes build directory, package list, user settings, and optional dotfiles arrangement.
@@ -73,7 +99,7 @@ sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
 
 ***
 
-## Step 4: Install the OS Image
+## Step 5: Install the OS Image (Manual Method Only)
 
 1. Check available drives:
    ```bash
@@ -83,11 +109,11 @@ sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
    ```bash
    obsidianctl install /dev/sdX /etc/system.sfs
    ```
-   - Replace `/dev/sdX` with the target drive and adjust `/etc/system.sfs` as needed. also inputting a `.mkobsfs` file instead of the SquashFS image is supported.
+   - Replace `/dev/sdX` with the target drive and adjust `/etc/system.sfs` as needed. Also, inputting a `.mkobsfs` file instead of the SquashFS image is supported.
 
 ***
 
-## Step 5: Reboot
+## Step 6: Reboot
 
 - When finished, reboot your system. You now have a functional ObsidianOS installation.
 
@@ -95,5 +121,7 @@ sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
 
 ### **More info**
 
-- The **customized ArchISO** is the preferred and most out-of-the-box method, as it includes all essential tools.
+- **ARbs inside the ObsidianOS ArchISO** is the preferred and most user-friendly method, providing a complete guided installation experience.
+- The **customized ArchISO** includes all essential tools and the ARbs wizard out of the box.
 - For advanced users, building from a regular Arch host remains fully supported.
+- ARbs can also be used on existing Arch systems for easy system management and updates.
