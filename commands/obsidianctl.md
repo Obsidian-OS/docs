@@ -86,7 +86,7 @@ sudo obsidianctl slot-diff
 
 Updates the specified slot over the internet, downloads the latest official system image. **WARNING: THIS REQUIRES YOU TO BE USING THE OFFICIAL SYSTEM IMAGE**
 
-*    `<slot>`: The slot to netupdate (`a` or `b).
+*    `<slot>`: The slot to netupdate (`a` or `b`).
 
 ```bash
 sudo obsidianctl netupdate b
