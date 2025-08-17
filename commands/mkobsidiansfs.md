@@ -119,7 +119,6 @@ PROFILE=server USERNAME=admin TIMEZONE=UTC sudo mkobsidiansfs serverconfig.mkobs
 PROFILE=dev sudo mkobsidiansfs universal_config.mkobsfs dev_system.sfs
 PROFILE=gaming sudo mkobsidiansfs universal_config.mkobsfs gaming_system.sfs
 ```
-```
 
 #### Profile-Based Configuration Examples
 
