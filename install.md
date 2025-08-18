@@ -68,27 +68,7 @@ When you boot from the ObsidianOS ArchISO:
 
 **That's it!** No need to remember commands or manually configure anything.
 
-## Step 3: Prepare the Target Drive (Manual Method Only)
-
-***Warning:** This section is only needed if you're not using the ARbs wizard. The wizard handles this automatically.*
-
-1. Identify your target disk:
-   ```bash
-   lsblk
-   ```
-2. Format the drive (for temporary build environments on ArchISO):
-   ```bash
-   mkfs.ext4 /dev/sdX
-   ```
-   - Replace `/dev/sdX` with your target disk (not a partition!).
-3. Mount the formatted drive:
-   ```bash
-   mount /dev/sdX /mnt
-   ```
-
-***
-
-## Step 4: Create a System Image (Manual Method Only)
+## Step 3: Create a System Image (Manual Method Only)
 
 1. Configure `my.mkobsfs` for your needs:
    - Example config includes build directory, package list, user settings, and optional dotfiles arrangement.
@@ -99,7 +79,7 @@ When you boot from the ObsidianOS ArchISO:
 
 ***
 
-## Step 5: Install the OS Image (Manual Method Only)
+## Step 4: Install the OS Image (Manual Method Only)
 
 1. Check available drives:
    ```bash
@@ -113,7 +93,7 @@ When you boot from the ObsidianOS ArchISO:
 
 ***
 
-## Step 6: Reboot
+## Step 5: Reboot
 
 - When finished, reboot your system. You now have a functional ObsidianOS installation.
 
