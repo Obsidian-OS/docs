@@ -91,31 +91,32 @@ The `pluginctl` utility provides the following commands to interact with `plugin
   - Lists all plugins currently known to the `plugind` daemon, along with their status (enabled/disabled), slot, events, and run-as user.
   - Example Output:
     ```
-    Name        Slot  Event                 Run As  Restart On  Enabled
-    ----------  ----  --------------------  ------  ----------  -------
-    battery-mon AB    OnBatteryLevelChange  @                   true
-    config-sync AB    Modify                #                   false
++-------------+------+------------------------------+--------+----------------+---------+
+| Name        | Slot | Event                        | Run As | Restart On     | Enabled |
++-------------+------+------------------------------+--------+----------------+---------+
+| test-plugin | AB   | OnTest, OnBatteryLevelChange | #      | OnScriptFailed | true    |
++-------------+------+------------------------------+--------+----------------+---------+
     ```
 
 - **`pluginctl info <plugin_name>`**
   - Displays detailed information about a specific plugin, including its full path, configured events, and other manifest details.
   - Example:
     ```bash
-    ctl info battery-mon
+    pluginctl info test-plugin
     ```
 
 - **`pluginctl enable <plugin_name>`**
   - Enables the specified plugin. If the plugin has an `OnEnabled` event defined, it will be triggered.
   - Example:
     ```bash
-    ctl enable battery-mon
+    pluginctl enable test-plugin
     ```
 
 - **`pluginctl disable <plugin_name>`**
   - Disables the specified plugin. If the plugin has an `OnDisabled` event defined, it will be triggered.
   - Example:
     ```bash
-    ctl disable battery-mon
+    pluginctl disable test-plugin
     ```
 
 - **`pluginctl trigger <plugin_name> <event_name> [event_data]`**
@@ -123,29 +124,29 @@ The `pluginctl` utility provides the following commands to interact with `plugin
   - `event_data` is an optional string that will be passed to the plugin via the `EVENT_RETURN` environment variable.
   - Example:
     ```bash
-    ctl trigger battery-mon OnBatteryLevelChange "50"
-    ctl trigger config-sync ManualSync
+    pluginctl trigger battery-mon OnBatteryLevelChange "50"
+    pluginctl trigger config-sync ManualSync
     ```
 
 - **`pluginctl reload`**
   - Instructs the `plugind` daemon to re-read all plugin manifests from disk. This is useful after adding, removing, or modifying plugin files.
   - Example:
     ```bash
-    ctl reload
+    pluginctl reload
     ```
 
 - **`pluginctl status`**
   - Provides a basic status check of the `plugind` daemon.
   - Example:
     ```bash
-    ctl status
+    pluginctl status
     ```
 
 - **`pluginctl --raw <command>`**
   - Most `pluginctl` commands support a `--raw` flag, which outputs the daemon's response as raw JSON, useful for scripting and integration.
   - Example:
     ```bash
-    ctl --raw list
+    pluginctl --raw list
     ```
 
 ## Features
@@ -159,7 +160,7 @@ The `pluginctl` utility provides the following commands to interact with `plugin
 ## Requirements
 
 ### For `plugind` Daemon:
-- Linux operating system (due to Unix sockets, `inotify`, `fork`, `setuid`/`setgid`).
+- GNU/Linux operating system (due to Unix sockets, `inotify`, `fork`, `setuid`/`setgid`).
 - `wheel` group for socket permissions.
 
 ### For Plugins:
