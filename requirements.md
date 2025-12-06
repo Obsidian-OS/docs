@@ -1,9 +1,3 @@
----
-title: System Requirements
-nav_order: 3
----
-# THIS REPOSITORY IS ARCHIVED, IN FAVOR OF [THE WIKI](https://wiki.obsidianos.xyz).
-
 ## Minimum Requirements
 
 The following are the **minimum supported specifications** to install and run ObsidianOS:
