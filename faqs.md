@@ -1,9 +1,3 @@
----
-title: Frequently Asked Questions
-nav_order: 4
----
-
-# THIS REPOSITORY IS ARCHIVED, IN FAVOR OF [THE WIKI](https://wiki.obsidianos.xyz).
 # Frequently Asked Questions
 * Why ext4 and not [insert filesystem here]?
 
