@@ -26,13 +26,13 @@ You have four options:
 - On startup, the ARbs installation wizard is available for easy installation. On the graphical ISOs, we have a graphical installer AND ARbs
 - Great for offline installations or when you need a complete bootable environment.
 
-### **Option 3: Use an Existing Arch Linux Host**
+### **Option 2: Use an Existing Arch Linux Host**
 
 - Install the [`arch-install-scripts`](https://archlinux.org/packages/extra/any/arch-install-scripts/) package on your Arch system.
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-### **Option 4: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
+### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
 sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
