@@ -5,8 +5,6 @@
 - [Installation Guide](/install)
 - [FAQs](/faqs)
 
----
-
 ### External Links
 
 - [Main Website](https://obsidianos.xyz)
