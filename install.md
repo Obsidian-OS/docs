@@ -1,10 +1,3 @@
----
-title: Installation guide
-nav_order: 2
----
-# THIS REPOSITORY IS ARCHIVED, IN FAVOR OF [THE WIKI](https://wiki.obsidianos.xyz).
-# ObsidianOS Installation Guide
-
 ## Before You Begin
 
 Check the [System Requirements](https://obsidian-os.github.io/docs/requirements.html).
@@ -17,19 +10,11 @@ You have four options:
 
 > **💡 Quick Start**: For most users, simply download the ObsidianOS ArchISO, boot from it, and follow the ARbs wizard that appears automatically!
 
-### **Option 1: Recommended — Use ARbs inside ObsidianOS ArchISO**
 
-- **The easiest way to install ObsidianOS!** Download and boot from the ObsidianOS ArchISO
-- On startup, the ARbs installation wizard automatically launches
-- **No need to remember complex commands or configuration syntax**
-- **Automatically handles disk detection, image selection, and dual-boot setup**
-- **Beautiful, interactive interface guides you through the entire process**
-- **This is the most user-friendly and recommended installation method.**
-- **Perfect for beginners and experienced users alike**
-
-### **Option 2: Use the Customized ArchISO**
+### **Option 1: Use the Customized ArchISO**
 
 - Download a pre-built ArchISO from the [ObsidianOS Download Page](https://obsidian-os.github.io/download.html), or build your own with:
+- We also have KDE and Cosmic ISOs.
   ```bash
   git clone https://github.com/Obsidian-OS/archiso/
   cd archiso
@@ -38,7 +23,7 @@ You have four options:
   ```
   - The created ISO is in the `out` directory.
 - **The customized ArchISO provides both `obsidianctl` and `mkobsidiansfs` tools out of the box.**
-- On startup, the ARbs installation wizard is available for easy installation.
+- On startup, the ARbs installation wizard is available for easy installation. On the graphical ISOs, we have a graphical installer AND ARbs
 - Great for offline installations or when you need a complete bootable environment.
 
 ### **Option 3: Use an Existing Arch Linux Host**
