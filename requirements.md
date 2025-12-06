@@ -1,4 +1,4 @@
-## Minimum Requirements
+# Minimum Requirements
 
 The following are the **minimum supported specifications** to install and run ObsidianOS:
 
