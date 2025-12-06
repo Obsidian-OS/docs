@@ -1,6 +1,6 @@
 ## Before You Begin
 
-Check the [System Requirements](https://obsidian-os.github.io/docs/requirements.html).
+Check the [System Requirements](/requirements).
 
 ***
 
@@ -83,10 +83,3 @@ When you boot from the ObsidianOS ArchISO:
 - When finished, reboot your system. You now have a functional ObsidianOS installation.
 
 ***
-
-### **More info**
-
-- **ARbs inside the ObsidianOS ArchISO** is the preferred and most user-friendly method, providing a complete guided installation experience.
-- The **customized ArchISO** includes all essential tools and the ARbs wizard out of the box.
-- For advanced users, building from a regular Arch host remains fully supported.
-- ARbs can also be used on existing Arch systems for easy system management and updates.
