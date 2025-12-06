@@ -1,3 +1,4 @@
+# Installation Guide
 ## Before You Begin
 
 Check the [System Requirements](/requirements).
