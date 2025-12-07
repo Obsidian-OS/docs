@@ -33,7 +33,7 @@ You have four options:
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-### **Option 3: *NEW!* Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
+### **Option 3: Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
 sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
@@ -62,6 +62,7 @@ When you boot from the ObsidianOS ArchISO:
    ```bash
    mkobsidiansfs my.mkobsfs
    ```
+   NOTE: We have experimental non-arch image builders.
 
 ***
 
