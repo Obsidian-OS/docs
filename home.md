@@ -1,5 +1,7 @@
 # Welcome to the **ObsidianOS** Documentation
 
+![Edits](https://img.shields.io/github/commit-activity/t/Obsidian-OS/docs?style=flat-square&label=Edits%3A%20&labelColor=%2300000000&color=%2300000000)
+
 ObsidianOS is a UEFI‑only, systemd‑based operating system for **x86_64** systems, designed with an A/B partition layout for reliability.  
 This documentation will guide you through installation, usage, and troubleshooting.
 
