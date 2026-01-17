@@ -16,7 +16,7 @@ The following are the **minimum supported specifications** to install and run Ob
   - `/home`: Rest of available space
   - EFI System Partition (ESP): 512 MiB × 2 *(for A/B ESP layout)*
 - **Firmware:**  
-  - UEFI (EFI‑based motherboard/firmware) required  
+  - UEFI (EFI‑based motherboard/firmware) required with Secure Boot disabled
   - Legacy BIOS/CSM mode is **not supported**
 - **Connectivity:**  
   - Active internet connection required during system image building
@@ -37,4 +37,5 @@ For a smoother installation and better day‑to‑day performance:
   - 40 GiB or more to allow space for additional packages, logs, and user data
 - **Firmware:**  
   - UEFI with Secure Boot disabled  
-    - *Secure Boot may be supported in the future, but is currently untested/unsupported*
+    - *Secure Boot is Microsoft Boot - TheOddCell*
+    - If anyone is willing to help us with this, we may add support anyways.
