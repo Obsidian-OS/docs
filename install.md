@@ -14,8 +14,7 @@ You have four options:
 
 ### **Option 1: Use the Customized ArchISO**
 
-- Download a pre-built ArchISO from the [ObsidianOS Download Page](https://obsidian-os.github.io/download.html), or build your own with:
-- We also have KDE and Cosmic ISOs.
+- Download a pre-built ArchISO from the [ObsidianOS Download Page](https://files.obsidianos.xyz), or build your own with:
   ```bash
   git clone https://github.com/Obsidian-OS/archiso/
   cd archiso
@@ -33,7 +32,7 @@ You have four options:
 - Manually build and install [obsidianctl](https://github.com/Obsidian-OS/obsidianctl) (or use [AUR](https://aur.archlinux.org/packages/obsidianctl-git)) and [mkobsidiansfs](https://github.com/Obsidian-OS/mkobsidiansfs).
 - Proceed with OS image creation and installation using those tools.
 
-### **Option 3: Use an Existing Arch Linux Host with** `ARbs` (ARch image Based inStaller)
+### **Option 3: Use an Existing Arch Linux Host with `ARbs` (ARch image Based inStaller)
 - Just run:
 ```
 sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"
@@ -62,7 +61,7 @@ When you boot from the ObsidianOS ArchISO:
    ```bash
    mkobsidiansfs my.mkobsfs
    ```
-   NOTE: We have experimental non-arch image builders.
+   NOTE: We have non-Arch image builders such as `mkobsidiansfs-gentoo`.
 
 ***
 
@@ -74,7 +73,7 @@ When you boot from the ObsidianOS ArchISO:
    ```
 2. Install the image:
    ```bash
-   obsidianctl install /dev/sdX /etc/system.sfs
+   obsidianctl install /dev/sdX /etc/system.sfs --rootfs-size=... --etc-size=... --var-size=... --esp-size=...
    ```
    - Replace `/dev/sdX` with the target drive and adjust `/etc/system.sfs` as needed. Also, inputting a `.mkobsfs` file instead of the SquashFS image is supported.
 
