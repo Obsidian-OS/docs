@@ -11,4 +11,4 @@
 - [Contribute to the wiki](https://github.com/Obsidian-OS/docs)
 - [Reddit](https://reddit.com/r/Obsidian_OS)
 - [Discord](https://dsc.gg/obsidianos)
-- [Matrix](https://matrix.to/#/obsidianos-space:matrix.org)
+- [Matrix](https://matrix.to/#/#obsidianos-space:matrix.org)
