@@ -15,5 +15,5 @@ Any one of those platforms:
 
 1. [Reddit](https://reddit.com/r/Obsidian_OS)
 2. [Discord](https://dsc.gg/obsidianos)
-3. [Matrix](https://matrix.org/#/#obsidianos-space:matrix.org)
+3. [Matrix](https://matrix.to/#/#obsidianos-space:matrix.org)
 4. [Github Discussions](https://github.com/orgs/Obsidian-OS/discussions)
