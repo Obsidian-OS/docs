@@ -1,5 +1,5 @@
 # Welcome to the **ObsidianOS** Documentation
-ObsidianOS is a UEFI‑only, systemd‑based operating system for **x86_64** systems, designed with an A/B partition layout for reliability.  
+ObsidianOS is a UEFI‑only GNU/Linux operating system, designed with an A/B partition layout for reliability.  
 This documentation will guide you through installation, usage, and troubleshooting.
 
 **Get started:**
